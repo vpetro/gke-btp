@@ -4,18 +4,18 @@ metadata:
   name: myapp-deployment
   labels:
     app: myapp
-  spec:
-    replicas: 3
-    selector:
-      matchLabels:
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
         app: myapp
-    template:
-      metadata:
-        labels:
-          app: myapp
-      spec:
-        containers:
-        - name: myapp
-          image: gcr.io/playground-s-11-2f973248/myapp:blue
-          ports:
-          - containerPort: 8888
+    spec:
+      containers:
+      - name: myapp
+        image: gcr.io/playground-s-11-2f973248/myapp:blue
+        ports:
+        - containerPort: 8888
